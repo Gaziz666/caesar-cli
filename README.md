@@ -67,4 +67,5 @@ node caesar --shift 10 -a encode
 ```
 node caesar --shift 5 -a decode
 AbCdEf
+VwXyZa
 ```
