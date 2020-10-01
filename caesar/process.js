@@ -10,9 +10,11 @@ exports.process = (shift, action, input, output) => {
     process.exit(9);
   }
 
+  shift = action === "encode" ? shift * 1 : shift * -1;
+
   pipeline(
     inputStream(input),
-    transformStream(shift, action),
+    transformStream(shift),
     outputStream(output),
     e => {
       if (e) {
