@@ -2,10 +2,10 @@ const fs = require("fs");
 
 exports.inputStream = filename => {
   if (filename) {
-    try {
+    if (fs.existsSync(filename)) {
       return fs.createReadStream(filename);
-    } catch (e) {
-      console.error("Input file does not exist", e);
+    } else {
+      console.error("Input file does not exist");
       process.exit(9);
     }
   }
